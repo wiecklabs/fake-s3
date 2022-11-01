@@ -23,7 +23,7 @@ module FakeS3
       @quiet_mode = quiet_mode
       Dir[File.join(root,"*")].each do |bucket|
         bucket_name = File.basename(bucket)
-        bucket_obj = Bucket.new(bucket_name,Time.now, Dir.glob(File.join(@root, bucket_name, "**/*"))
+        bucket_obj = Bucket.new(bucket_name,Time.now, Dir.glob(File.join(@root, bucket_name, "**/*")))
         @buckets << bucket_obj
         @bucket_hash[bucket_name] = bucket_obj
       end
